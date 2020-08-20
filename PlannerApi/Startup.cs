@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using PlannerApi.Repositories;
 
 namespace PlannerApi
 {
@@ -26,6 +27,10 @@ namespace PlannerApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped<INotesRepository, NotesRepository>();
+            services.AddScoped<ICalendarEventsRepository, CalendarEventsRepository>();
+            services.AddScoped<IRoutineTasksRepository, RoutineTasksRepository>();
+            services.AddScoped<ISingleTasksRepository, SingleTasksRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
