@@ -1,6 +1,6 @@
 namespace PlannerApi.Enums
 {
-    public enum IntervalTypeEnum
+    public enum RoutineTypeEnum
     {
         Daily,
         Weekly,
